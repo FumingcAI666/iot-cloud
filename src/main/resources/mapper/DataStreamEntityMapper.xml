@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iotcloud.springboot.mapping.DataStreamEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.iotcloud.springboot.pojo.DataStreamEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="parameter" property="parameter" jdbcType="DOUBLE" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="did" property="did" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    `id`, `parameter`, `createtime`, `did`
+  </sql>
+
+
+
+
+  <select id="selectByUid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM `data_stream_entity` where did in
+    (SELECT id FROM `data_stream_model` where eid in
+    (SELECT id FROM `equipment` where pid in (SELECT id FROM `product` where uid = #{uid,jdbcType=INTEGER})))
+  </select>
+
+  <select id="selectByshuju" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM `data_stream_entity` ORDER BY `id` DESC LIMIT 1
+  </select>
+
+
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.iotcloud.springboot.pojo.DataStreamEntityExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from data_stream_entity
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from data_stream_entity
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from data_stream_entity
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.iotcloud.springboot.pojo.DataStreamEntity" >
+    insert into data_stream_entity (id, parameter, createtime, 
+      did)
+    values (#{id,jdbcType=INTEGER}, #{parameter,jdbcType=DOUBLE}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{did,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.iotcloud.springboot.pojo.DataStreamEntity" >
+    insert into data_stream_entity
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parameter != null" >
+        parameter,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="did != null" >
+        did,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="parameter != null" >
+        #{parameter,jdbcType=DOUBLE},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="did != null" >
+        #{did,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.iotcloud.springboot.pojo.DataStreamEntity" >
+    update data_stream_entity
+    <set >
+      <if test="parameter != null" >
+        parameter = #{parameter,jdbcType=DOUBLE},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="did != null" >
+        did = #{did,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.iotcloud.springboot.pojo.DataStreamEntity" >
+    update data_stream_entity
+    set parameter = #{parameter,jdbcType=DOUBLE},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      did = #{did,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
