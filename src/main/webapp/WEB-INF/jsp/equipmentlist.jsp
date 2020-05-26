@@ -314,34 +314,21 @@
 
                     <h3 class="page-title">
 
-                        Form Components
-
-                        <small>form components and widgets</small>
 
                     </h3>
 
                     <ul class="breadcrumb">
 
-                        <li>
 
+                        <li>
                             <i class="icon-home"></i>
-
-                            <a href="index.html">Home</a>
-
+                            <a href="index.html">系统首页</a>
                             <span class="icon-angle-right"></span>
-
                         </li>
 
                         <li>
-
-                            <a href="#">Form Stuff</a>
-
-                            <span class="icon-angle-right"></span>
-
+                            <a href="#">设备信息</a>
                         </li>
-
-                        <li><a href="#">Form Components</a></li>
-
                     </ul>
 
                 </div>

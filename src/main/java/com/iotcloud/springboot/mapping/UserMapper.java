@@ -4,6 +4,7 @@ import com.iotcloud.springboot.pojo.User;
 import com.iotcloud.springboot.pojo.UserExample;
 import com.iotcloud.springboot.pojo.UserKey;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

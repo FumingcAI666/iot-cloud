@@ -47,10 +47,10 @@
   </sql>
 
   <select id="selectUserByNameAndPassword" resultMap="BaseResultMap" parameterType="java.lang.String">
-  select
-  <include refid="Base_Column_List" />
-  from `user`
-  where phone = #{name} and password = #{password}
+    select
+    <include refid="Base_Column_List" />
+    from `user`
+    where phone = #{name} and password = #{password}
   </select>
 
   <select id="selectByPhone" resultType="int" parameterType="java.lang.String">
@@ -79,11 +79,11 @@
 
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.iotcloud.springboot.pojo.UserKey" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from user
     where id = #{id,jdbcType=INTEGER}
-      and phone = #{phone,jdbcType=VARCHAR}
+    and phone = #{phone,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.iotcloud.springboot.pojo.UserKey" >
     delete from user
@@ -91,10 +91,10 @@
       and phone = #{phone,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.iotcloud.springboot.pojo.User" >
-    insert into user (id, phone, name, 
+    insert into user (id, phone, name,
       password, email, createtime
       )
-    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
       #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -157,8 +157,7 @@
         createtime = #{createtime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
-      and phone = #{phone,jdbcType=VARCHAR}
+    where phone = #{phone,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.iotcloud.springboot.pojo.User" >
     update user

@@ -324,33 +324,19 @@
 
                     <h3 class="page-title">
 
-                        Form Components
-
-                        <small>form components and widgets</small>
-
                     </h3>
 
                     <ul class="breadcrumb">
 
                         <li>
-
                             <i class="icon-home"></i>
-
-                            <a href="index.html">Home</a>
-
+                            <a href="index.html">系统首页</a>
                             <span class="icon-angle-right"></span>
-
                         </li>
 
                         <li>
-
-                            <a href="#">Form Stuff</a>
-
-                            <span class="icon-angle-right"></span>
-
+                            <a href="#">设备信息的实时数据</a>
                         </li>
-
-                        <li><a href="#">Form Components</a></li>
 
                     </ul>
 
@@ -466,6 +452,8 @@
     </div>
 
 
+    <c:forEach items="${dataStreamModels}" var="row">
+
     <script>
         // JS 代码
         Highcharts.setOptions({
@@ -491,20 +479,18 @@
 
                             var x = (new Date()).getTime(); // 当前时间
                             $.ajax({
-                                url:"/model_shuju",
+                                url:"/model_date?id=${row.id}",
                                 success:function(data){
                                     var y = data.parameter;       // 数据值
-                                    if(y>1||y<0.2){
-                                        alert("湿度异常");
+                                    if(y<0 || y>30){
+                                        alert("${row.name}-超过阈值，请马上联系管理员");
                                     }
                                     series.addPoint([x, y], true, true);
                                 },
                                 cache: false
                             });
                             activeLastPointToolip(chart);
-                        }, 5000);
-
-
+                        }, 10000);
                     }
                 }
             },
@@ -531,7 +517,7 @@
                 enabled: false
             },
             series: [{
-                name: '随机数据',
+                name: '${row.name}',
                 data: (function () {
                     // 生成随机值
                     var data = [],
@@ -549,7 +535,7 @@
         });
     </script>
 
-
+    </c:forEach>
 
 
     <!-- END FOOTER -->

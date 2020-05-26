@@ -3,65 +3,96 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Metronic | Form Stuff - Form Components</title>
+
+    <meta charset="utf-8" />
+
+    <title>物联网云操作平台</title>
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
     <meta content="" name="description" />
+
     <meta content="" name="author" />
+
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
     <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
     <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
     <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
     <link href="../../css/style-metro.css" rel="stylesheet" type="text/css"/>
+
     <link href="../../css/style.css" rel="stylesheet" type="text/css"/>
+
     <link href="../../css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
     <link href="../../css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
     <link href="../../css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
     <!-- END GLOBAL MANDATORY STYLES -->
+
     <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-fileupload.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/chosen.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/select2_metro.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/jquery.tagsinput.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/clockface.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-wysihtml5.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/timepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/colorpicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-toggle-buttons.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/daterangepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/datetimepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/multi-select-metro.css" />
-    <link href="../../css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+
+    <link href="../../css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
+
+    <link href="../../css/daterangepicker.css" rel="stylesheet" type="text/css" />
+
+    <link href="../../css/fullcalendar.css" rel="stylesheet" type="text/css"/>
+
+    <link href="../../css/jqvmap.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <link href="../../css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+
     <!-- END PAGE LEVEL STYLES -->
+
     <link rel="shortcut icon" href="../../image/favicon.ico" />
+
 </head>
+
 <!-- END HEAD -->
+
 <!-- BEGIN BODY -->
+
 <body class="page-header-fixed">
+
 <!-- BEGIN HEADER -->
+
 <div class="header navbar navbar-inverse navbar-fixed-top">
+
     <!-- BEGIN TOP NAVIGATION BAR -->
+
     <div class="navbar-inner">
+
         <div class="container-fluid">
+
             <!-- BEGIN LOGO -->
+
             <a class="brand" href="index.html">
+
                 <img src="../../image/logo.png" alt="logo"/>
+
             </a>
+
             <!-- END LOGO -->
+
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
             <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
                 <img src="../../image/menu-toggler.png" alt="" />
             </a>
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <ul class="nav pull-right">
+
+
                 <li class="dropdown user">
                     <a href="/login_user" class="dropdown-toggle" data-toggle="dropdown">
                         <img alt="" src="../../image/avatar1_small.jpg" />
@@ -79,12 +110,12 @@
                 <!-- END INBOX DROPDOWN -->
                 <li class="dropdown user">
                     <!-- BEGIN TODO DROPDOWN -->
-                    <a href="/login_user"><i class="icon-user"></i> 登录 </a><br/>
+                    <a href="/login"><i class="icon-user"></i> 登录 </a><br/>
                 </li>
 
                 <li class="dropdown user">
                     <a href="/register"><i class="icon-user"></i> 注册</a><br/>
-                    <!-- END TO DO DROP DOWN -->
+                    <!-- END TODO DROPDOWN -->
                 </li>
                 <!-- END USER LOGIN DROPDOWN -->
             </ul>
@@ -92,13 +123,22 @@
         </div>
 
     </div>
+
+    <!-- END TOP NAVIGATION BAR -->
+
 </div>
+
 <!-- END HEADER -->
+<div class="copyrights">Collect from </div>
+
 <!-- BEGIN CONTAINER -->
-<div class="page-container row-fluid">
+
+<div class="page-container">
+
     <!-- BEGIN SIDEBAR -->
+
     <div class="page-sidebar nav-collapse collapse">
-        <!-- BEGIN SIDEBAR MENU -->
+
         <!-- BEGIN SIDEBAR MENU -->
 
         <ul class="page-sidebar-menu">
@@ -158,19 +198,22 @@
                         <a href="/entity_info">
                             数据流信息</a>
                     </li>
-                    <!--
-                    <li ><a href="form_wizard.html">Form Wizard</a></li>
-                    <li ><a href="form_validation.html">Form Validation</a></li>
-                    <li ><a href="form_fileupload.html"> Multiple File Upload</a></li>
-                    <li ><a href="form_dropzone.html">Dropzone File Upload</a></li>  -->
                 </ul>
             </li>
 
 
-            <li class="start active ">
+            <li class="icon-table">
                 <a href="/iotcloud">
-                    <i class="icon-home"></i>
+                    <i class="sub-menu"></i>
                     <span class="title">仪表盘</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+
+            <li class="start active ">
+                <a href="/iotcloud_news">
+                    <i class="icon-home"></i>
+                    <span class="title">行业资讯</span>
                     <span class="selected"></span>
                 </a>
             </li>
@@ -192,13 +235,13 @@
 
                 <button data-dismiss="modal" class="close" type="button"></button>
 
-                <h3>portlet Settings</h3>
+                <h3>Widget Settings</h3>
 
             </div>
 
             <div class="modal-body">
 
-                <p>Here will be a configuration form</p>
+                Widget settings form goes here
 
             </div>
 
@@ -306,138 +349,165 @@
 
                     <!-- END BEGIN STYLE CUSTOMIZER -->
 
+                    <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
                     <h3 class="page-title">
+
+                        物联网云操作平台 <small>iot cloud</small>
 
                     </h3>
 
                     <ul class="breadcrumb">
 
                         <li>
+
                             <i class="icon-home"></i>
-                            <a href="index.html">系统首页</a>
-                            <span class="icon-angle-right"></span>
+
+                            <a href="index.html">Home</a>
+
+                            <i class="icon-angle-right"></i>
+
                         </li>
 
-                        <li>
-                            <a href="#"></a>
+                        <li><a href="#">行业资讯</a></li>
+
+                        <li class="pull-right no-text-shadow">
+
+                            <div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
+
+                                <i class="icon-calendar"></i>
+
+                                <span></span>
+
+                                <i class="icon-angle-down"></i>
+
+                            </div>
+
                         </li>
+
                     </ul>
+
+                    <!-- END PAGE TITLE & BREADCRUMB-->
 
                 </div>
 
             </div>
 
             <!-- END PAGE HEADER-->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <!-- /.panel-heading -->
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                                <th>数据流实体</th>
-                                <th>数据流时间</th>
-                                <th>所属设备</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${dataStreamEntities}" var="row">
-                                <tr>
-                                    <td>${row.parameter}</td>
-                                    <td>${row.createtime}</td>
-                                    <td>${row.did}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
 
+            <div id="dashboard">
+                <!-- BEGIN DASHBOARD STATS -->
+                <div class="row-fluid">
+                    <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
+                        <div class="dashboard-stat blue">
+                            <div class="visual">
+                                <i class="icon-comments"></i>
+                            </div>
+                            <div class="details">
+                                <div class="number"> ${pcount} </div>
+                                <div class="desc"> 产品总数 </div>
+                            </div>
+                            <a class="more" href="/product_infrom">
+                                View more <i class="m-icon-swapright m-icon-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                <h3 class="page-title">
+                    行 业 资 讯 <small>提供最新最全的行业资讯</small>
+                </h3>
+                <!-- END DASHBOARD STATS -->
+                <a class="more" href="http://www.lswz.gov.cn/">
+                    国家粮食和物资储备局 <i class="m-icon-swapright m-icon-white"></i>
+                </a><br/>
+                <a class="more" href="http://36.33.35.42:8000/">
+                    国家粮食交易中心 <i class="m-icon-swapright m-icon-white"></i>
+                </a><br/>
+                <a class="more" href="http://www.chinagrain.cn/">
+                    中国粮油信息网 <i class="m-icon-swapright m-icon-white"></i>
+                </a><br/>
+                <a class="more" href="http://www.grainoil.com.cn/">
+                    中国粮食信息网 <i class="m-icon-swapright m-icon-white"></i>
+                </a><br/>
+                <a class="more" href="http://lsj.hsxgw.gov.cn/">
+                    国家粮食局 <i class="m-icon-swapright m-icon-white"></i>
+                </a><br/>
+
+
+            </div>
         </div>
-        <!-- END PAGE -->
+        <!-- END PAGE CONTAINER-->
     </div>
-    <!-- END CONTAINER -->
-    <!-- BEGIN FOOTER -->
-    <div class="footer">
-        <div class="footer-tools">
+    <!-- END PAGE -->
+</div>
+
+<!-- END CONTAINER -->
+
+<!-- BEGIN FOOTER -->
+
+<div class="footer">
+
+    <div class="footer-inner">
+        2013 &copy; Metronic by keenthemes.Collect from <a href="http://www.cssmoban.com/" title="网站模板" target="_blank">网站模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+    </div>
+    <div class="footer-tools">
 			<span class="go-top">
 			<i class="icon-angle-up"></i>
 			</span>
-        </div>
     </div>
-
-    <!-- END FOOTER -->
-
-    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-
-    <!-- BEGIN CORE PLUGINS -->
-
-    <script src="../../js/jquery-1.10.1.min.js" type="text/javascript"></script>
-
-    <script src="../../js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-
-    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-
-    <script src="../../js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-
-    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-
-    <!--[if lt IE 9]>
-
-    <script src="../../js/excanvas.min.js"></script>
-
-    <script src="../../js/respond.min.js"></script>
-
-    <![endif]-->
-
-    <script src="../../js/jquery.slimscroll.min.js" type="text/javascript"></script>
-
-    <script src="../../js/jquery.blockui.min.js" type="text/javascript"></script>
-
-    <script src="../../js/jquery.cookie.min.js" type="text/javascript"></script>
-
-    <script src="../../js/jquery.uniform.min.js" type="text/javascript" ></script>
-
-    <!-- END CORE PLUGINS -->
-
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <script type="text/javascript" src="../../js/ckeditor.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap-fileupload.js"></script>
-    <script type="text/javascript" src="../../js/chosen.jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/select2.min.js"></script>
-    <script type="text/javascript" src="../../js/wysihtml5-0.3.0.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap-wysihtml5.js"></script>
-    <script type="text/javascript" src="../../js/jquery.tagsinput.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.toggle.buttons.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap-datetimepicker.js"></script>
-    <script type="text/javascript" src="../../js/clockface.js"></script>
-    <script type="text/javascript" src="../../js/date.js"></script>
-    <script type="text/javascript" src="../../js/daterangepicker.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap-colorpicker.js"></script>
-    <script type="text/javascript" src="../../js/bootstrap-timepicker.js"></script>
-    <script type="text/javascript" src="../../js/jquery.inputmask.bundle.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.input-ip-address-control-1.0.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.multi-select.js"></script>
-    <script src="../../js/bootstrap-modal.js" type="text/javascript" ></script>
-    <script src="../../js/bootstrap-modalmanager.js" type="text/javascript" ></script>
-    <!-- END PAGE LEVEL PLUGINS -->
-    <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="../../js/app.js"></script>
-    <script src="../../js/form-components.js"></script>
-    <!-- END PAGE LEVEL SCRIPTS -->
-    <script>
-        jQuery(document).ready(function() {
-            // initiate layout and plugins
-            App.init();
-            FormComponents.init();
-        });
-    </script>
-    <!-- END JAVASCRIPTS -->
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<script src="../../js/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="../../js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+<script src="../../js/excanvas.min.js"></script>
+<script src="../../js/respond.min.js"></script>
+<![endif]-->
+<script src="../../js/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.cookie.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.uniform.min.js" type="text/javascript" ></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../../js/jquery.vmap.js" type="text/javascript"></script>
+<script src="../../js/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="../../js/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="../../js/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="../../js/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="../../js/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="../../js/jquery.vmap.sampledata.js" type="text/javascript"></script>
+<script src="../../js/jquery.flot.js" type="text/javascript"></script>
+<script src="../../js/jquery.flot.resize.js" type="text/javascript"></script>
+<script src="../../js/jquery.pulsate.min.js" type="text/javascript"></script>
+<script src="../../js/date.js" type="text/javascript"></script>
+<script src="../../js/daterangepicker.js" type="text/javascript"></script>
+<script src="../../js/jquery.gritter.js" type="text/javascript"></script>
+<script src="../../js/fullcalendar.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.easy-pie-chart.js" type="text/javascript"></script>
+<script src="../../js/jquery.sparkline.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../js/app.js" type="text/javascript"></script>
+<script src="../../js/index.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        App.init(); // initlayout and core plugins
+        Index.init();
+        Index.initJQVMAP(); // init index page's custom scripts
+        Index.initCalendar(); // init index page's custom scripts
+        Index.initCharts(); // init index page's custom scripts
+        Index.initChat();
+        Index.initMiniCharts();
+        Index.initDashboardDaterange();
+        Index.initIntro();
+    });
+</script>
+<!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>

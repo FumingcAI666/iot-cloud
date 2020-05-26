@@ -110,7 +110,7 @@
                 <!-- END INBOX DROPDOWN -->
                 <li class="dropdown user">
                     <!-- BEGIN TODO DROPDOWN -->
-                    <a href="/login_user"><i class="icon-user"></i> 登录 </a><br/>
+                    <a href="/login"><i class="icon-user"></i> 登录 </a><br/>
                 </li>
 
                 <li class="dropdown user">
@@ -206,6 +206,14 @@
                 <a href="/iotcloud">
                     <i class="icon-home"></i>
                     <span class="title">仪表盘</span>
+                    <span class="selected"></span>
+                </a>
+            </li>
+
+            <li class="sub-menu">
+                <a href="/iotcloud_news">
+                    <i class="icon-home"></i>
+                    <span class="title">行业资讯</span>
                     <span class="selected"></span>
                 </a>
             </li>

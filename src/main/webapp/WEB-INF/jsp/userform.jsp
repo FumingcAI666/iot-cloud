@@ -277,21 +277,13 @@
 
                     <!-- END BEGIN STYLE CUSTOMIZER -->
 
-                    <h3 class="page-title">
-
-                        Form Components
-
-                        <small>form components and widgets</small>
-
-                    </h3>
-
                     <ul class="breadcrumb">
 
                         <li>
 
                             <i class="icon-home"></i>
 
-                            <a href="index.html">Home</a>
+                            <a href="index.html">系统主页</a>
 
                             <span class="icon-angle-right"></span>
 
@@ -299,13 +291,9 @@
 
                         <li>
 
-                            <a href="#">Form Stuff</a>
-
-                            <span class="icon-angle-right"></span>
+                            <a href="#">个人信息</a>
 
                         </li>
-
-                        <li><a href="#">Form Components</a></li>
 
                     </ul>
 
@@ -332,7 +320,7 @@
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            <form action="#" class="form-horizontal">
+                            <form action="/update_user" class="form-horizontal">
                                 <div class="control-group">
                                     <label class="control-label">用户名</label>
                                     <div class="controls">

@@ -310,35 +310,17 @@
 
                     <!-- END BEGIN STYLE CUSTOMIZER -->
 
-                    <h3 class="page-title">
-
-                        Form Components
-
-                        <small>form components and widgets</small>
-
-                    </h3>
-
                     <ul class="breadcrumb">
 
                         <li>
-
                             <i class="icon-home"></i>
-
-                            <a href="index.html">Home</a>
-
+                            <a href="index.html">系统首页</a>
                             <span class="icon-angle-right"></span>
-
                         </li>
 
                         <li>
-
-                            <a href="#">Form Stuff</a>
-
-                            <span class="icon-angle-right"></span>
-
+                            <a href="#">设备信息</a>
                         </li>
-
-                        <li><a href="#">Form Components</a></li>
 
                     </ul>
 
@@ -425,8 +407,8 @@
                             <c:forEach items="${equipments}" var="row">
                                 <tr>
                                     <td>${row.id}</td>
-                                    <td><a href="/dataStreamMode_infrom?eid=${row.id}">${row.name}</a></td>
-                                    <td>${row.code}</td>
+                                    <td>${row.name}</td>
+                                    <td><a href="/dataStreamMode_infrom?eid=${row.id}">${row.code}</a></td>
                                     <td>${row.describe}</td>
                                     <td>${row.state}</td>
                                     <th>${pname}</th>
