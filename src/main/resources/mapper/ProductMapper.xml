@@ -1,176 +1,176 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.iotcloud.springboot.mapping.ProductMapper" >
-  <resultMap id="BaseResultMap" type="com.iotcloud.springboot.pojo.Product" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="industry" property="industry" jdbcType="VARCHAR" />
-    <result column="category" property="category" jdbcType="VARCHAR" />
-    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
-    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
-    <result column="uid" property="uid" jdbcType="INTEGER" />
-  </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+<mapper namespace="com.iotcloud.springboot.mapping.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.iotcloud.springboot.pojo.Product">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="industry" property="industry" jdbcType="VARCHAR"/>
+        <result column="category" property="category" jdbcType="VARCHAR"/>
+        <result column="introduction" property="introduction" jdbcType="VARCHAR"/>
+        <result column="createtime" property="createtime" jdbcType="TIMESTAMP"/>
+        <result column="uid" property="uid" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+      `id`, `name`, `industry`, `category`, `introduction`, `createtime`, `uid`
+    </sql>
+
+    <select id="countByuid" parameterType="java.lang.Integer">
+      SELECT COUNT(1) FROM `product` where uid = #{id}
+    </select>
+
+    <select id="selectByUid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+        select
+        <include refid="Base_Column_List"/>
+        from product
+        where uid = #{uid,jdbcType=INTEGER}
+    </select>
+
+
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.iotcloud.springboot.pojo.ProductExample">
+        select
+        <if test="distinct">
+            distinct
         </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List" >
-    `id`, `name`, `industry`, `category`, `introduction`, `createtime`, `uid`
-  </sql>
-
-  <select id="countByuid" parameterType="java.lang.Integer">
-    SELECT COUNT(1) FROM `product` where uid = #{id}
-  </select>
-
-  <select id="selectByUid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-
-    select
-    <include refid="Base_Column_List" />
-    from product
-    where uid = #{uid,jdbcType=INTEGER}
-  </select>
-
-
-
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.iotcloud.springboot.pojo.ProductExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    'false' as QUERYID,
-    <include refid="Base_Column_List" />
-    from product
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from product
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from product
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.iotcloud.springboot.pojo.Product" >
-    insert into product (id, name, industry, 
-      category, introduction, createtime, 
-      uid)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{industry,jdbcType=VARCHAR}, 
-      #{category,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
-      #{uid,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.iotcloud.springboot.pojo.Product" >
-    insert into product
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="industry != null" >
-        industry,
-      </if>
-      <if test="category != null" >
-        category,
-      </if>
-      <if test="introduction != null" >
-        introduction,
-      </if>
-      <if test="createtime != null" >
-        createtime,
-      </if>
-      <if test="uid != null" >
-        uid,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="industry != null" >
-        #{industry,jdbcType=VARCHAR},
-      </if>
-      <if test="category != null" >
-        #{category,jdbcType=VARCHAR},
-      </if>
-      <if test="introduction != null" >
-        #{introduction,jdbcType=VARCHAR},
-      </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="uid != null" >
-        #{uid,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.iotcloud.springboot.pojo.Product" >
-    update product
-    <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="industry != null" >
+        'false' as QUERYID,
+        <include refid="Base_Column_List"/>
+        from product
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from product
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+      delete from product
+      where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.iotcloud.springboot.pojo.Product">
+      insert into product (id, name, industry,
+        category, introduction, createtime,
+        uid)
+      values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{industry,jdbcType=VARCHAR},
+        #{category,jdbcType=VARCHAR}, #{introduction,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP},
+        #{uid,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="com.iotcloud.springboot.pojo.Product">
+        insert into product
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="industry != null">
+                industry,
+            </if>
+            <if test="category != null">
+                category,
+            </if>
+            <if test="introduction != null">
+                introduction,
+            </if>
+            <if test="createtime != null">
+                createtime,
+            </if>
+            <if test="uid != null">
+                uid,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="industry != null">
+                #{industry,jdbcType=VARCHAR},
+            </if>
+            <if test="category != null">
+                #{category,jdbcType=VARCHAR},
+            </if>
+            <if test="introduction != null">
+                #{introduction,jdbcType=VARCHAR},
+            </if>
+            <if test="createtime != null">
+                #{createtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="uid != null">
+                #{uid,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.iotcloud.springboot.pojo.Product">
+        update product
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="industry != null">
+                industry = #{industry,jdbcType=VARCHAR},
+            </if>
+            <if test="category != null">
+                category = #{category,jdbcType=VARCHAR},
+            </if>
+            <if test="introduction != null">
+                introduction = #{introduction,jdbcType=VARCHAR},
+            </if>
+            <if test="createtime != null">
+                createtime = #{createtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="uid != null">
+                uid = #{uid,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.iotcloud.springboot.pojo.Product">
+      update product
+      set name = #{name,jdbcType=VARCHAR},
         industry = #{industry,jdbcType=VARCHAR},
-      </if>
-      <if test="category != null" >
         category = #{category,jdbcType=VARCHAR},
-      </if>
-      <if test="introduction != null" >
         introduction = #{introduction,jdbcType=VARCHAR},
-      </if>
-      <if test="createtime != null" >
         createtime = #{createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="uid != null" >
-        uid = #{uid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.iotcloud.springboot.pojo.Product" >
-    update product
-    set name = #{name,jdbcType=VARCHAR},
-      industry = #{industry,jdbcType=VARCHAR},
-      category = #{category,jdbcType=VARCHAR},
-      introduction = #{introduction,jdbcType=VARCHAR},
-      createtime = #{createtime,jdbcType=TIMESTAMP},
-      uid = #{uid,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+        uid = #{uid,jdbcType=INTEGER}
+      where id = #{id,jdbcType=INTEGER}
+    </update>
 </mapper>
