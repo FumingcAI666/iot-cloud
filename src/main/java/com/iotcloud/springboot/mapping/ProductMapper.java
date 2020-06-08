@@ -2,6 +2,7 @@ package com.iotcloud.springboot.mapping;
 
 import com.iotcloud.springboot.pojo.Product;
 import com.iotcloud.springboot.pojo.ProductExample;
+
 import java.util.List;
 
 public interface ProductMapper {

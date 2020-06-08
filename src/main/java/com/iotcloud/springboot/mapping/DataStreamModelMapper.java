@@ -2,6 +2,7 @@ package com.iotcloud.springboot.mapping;
 
 import com.iotcloud.springboot.pojo.DataStreamModel;
 import com.iotcloud.springboot.pojo.DataStreamModelExample;
+
 import java.util.List;
 
 public interface DataStreamModelMapper {

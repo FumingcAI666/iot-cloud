@@ -20,7 +20,7 @@ public class SendMQ {
         post.addRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=gbk");//在头文件中设置转码
         NameValuePair[] data = {new NameValuePair("Uid", "闲坐清溪听水声"), new NameValuePair("Key", "d41d8cd98f00b204e980"),
                 new NameValuePair("smsMob", "18846153485"),
-                new NameValuePair("smsText","基于物联网的粮库存储条件监控系统，提醒您当前采集的环境数据不利于存储，请尽快与管理人员核实。")};
+                new NameValuePair("smsText", "基于物联网的粮库存储条件监控系统，提醒您当前采集的环境数据不利于存储，请尽快与管理人员核实。")};
 
         post.setRequestBody(data);
 

@@ -17,15 +17,14 @@ public class ProductController {
     private ProductMapper productMapper;
 
     @RequestMapping("/product_insert")
-    public String register(Product product, Model model, HttpSession session){
+    public String register(Product product, Model model, HttpSession session) {
         User user = (User) session.getAttribute("user");
         product.setUid(user.getId());
-        System.out.println("product"+product);
+        System.out.println("product" + product);
         productMapper.insert(product);
-        model.addAttribute("msg","添加成功");
+        model.addAttribute("msg", "添加成功");
         return "redirect:product_infrom";
     }
-
 
 
 }

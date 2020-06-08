@@ -20,27 +20,27 @@ public class DataStreamModelController {
 
     @RequestMapping("/dataStreamMode_infrom")
     public String equipmentInfrom(Integer eid, Model model, HttpSession session) {
-        session.setAttribute("eid",eid);
-        if(eid == null){
+        session.setAttribute("eid", eid);
+        if (eid == null) {
             eid = (Integer) session.getAttribute("eid");
         }
-        List<DataStreamModel> dataStreamModels  = dataStreamModelMapper.selectByEid(eid);
-        model.addAttribute("dataStreamModels",dataStreamModels);
+        List<DataStreamModel> dataStreamModels = dataStreamModelMapper.selectByEid(eid);
+        model.addAttribute("dataStreamModels", dataStreamModels);
         return "dataStreamModeInfrom";
     }
 
     @RequestMapping("/dataStreamMode_insert")
-    public String dataStreamModeInsert(DataStreamModel dataStreamModel,Model model, HttpSession session){
+    public String dataStreamModeInsert(DataStreamModel dataStreamModel, Model model, HttpSession session) {
         dataStreamModel.setEid((Integer) session.getAttribute("eid"));
         System.out.println(dataStreamModel);
-        if(dataStreamModel != null) {
+        if (dataStreamModel != null) {
             dataStreamModelMapper.insert(dataStreamModel);
             model.addAttribute("msg", "添加成功");
         }
         return "redirect:dataStreamMode_infrom";
     }
 
-    @GetMapping(value="/dataStreamModes")
+    @GetMapping(value = "/dataStreamModes")
     public String dataStreamModes(Model model, HttpSession session) {
         User user = (User) session.getAttribute("user");
         if (user != null) {

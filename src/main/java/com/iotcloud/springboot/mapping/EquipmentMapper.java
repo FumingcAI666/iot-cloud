@@ -2,6 +2,7 @@ package com.iotcloud.springboot.mapping;
 
 import com.iotcloud.springboot.pojo.Equipment;
 import com.iotcloud.springboot.pojo.EquipmentExample;
+
 import java.util.List;
 
 public interface EquipmentMapper {

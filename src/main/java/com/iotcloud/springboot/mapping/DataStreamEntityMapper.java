@@ -2,6 +2,7 @@ package com.iotcloud.springboot.mapping;
 
 import com.iotcloud.springboot.pojo.DataStreamEntity;
 import com.iotcloud.springboot.pojo.DataStreamEntityExample;
+
 import java.util.List;
 
 public interface DataStreamEntityMapper {

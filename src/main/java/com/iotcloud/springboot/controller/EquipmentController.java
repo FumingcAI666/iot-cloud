@@ -18,22 +18,22 @@ public class EquipmentController {
     private EquipmentMapper equipmentMapper;
 
     @RequestMapping("/equipment_infrom")
-    public String equipmentInfrom(Integer pid,String name,Model model, HttpSession session){
-        if(pid == null){
+    public String equipmentInfrom(Integer pid, String name, Model model, HttpSession session) {
+        if (pid == null) {
             pid = (Integer) session.getAttribute("pid");
         }
         List<Equipment> equipments = equipmentMapper.selectByPid(pid);
-        session.setAttribute("pid",pid);
+        session.setAttribute("pid", pid);
         model.addAttribute("pname", name);
         model.addAttribute("equipments", equipments);
         return "equipmentinfrom";
     }
 
     @RequestMapping("/equipment_insert")
-    public String equipmentInsert(Equipment equipment,Model model, HttpSession session){
+    public String equipmentInsert(Equipment equipment, Model model, HttpSession session) {
         equipment.setPid((Integer) session.getAttribute("pid"));
         System.out.println(equipment);
-        if(equipment != null) {
+        if (equipment != null) {
             equipmentMapper.insert(equipment);
             model.addAttribute("msg", "添加成功");
         }
@@ -41,24 +41,24 @@ public class EquipmentController {
     }
 
     @RequestMapping("/equipment_list")
-    public String equipmentList(Model model, HttpSession session){
-        User user = (User)session.getAttribute("user");
+    public String equipmentList(Model model, HttpSession session) {
+        User user = (User) session.getAttribute("user");
         List<Equipment> equipments = equipmentMapper.selectByUid(user.getId());
-        model.addAttribute("equipments",equipments);
-        System.out.println(equipments+"\n");
+        model.addAttribute("equipments", equipments);
+        System.out.println(equipments + "\n");
         return "equipmentlist";
     }
 
 
     @RequestMapping("/equipment_updata")
-    public String equipmentUpdata(Integer id,Model model, HttpSession session){
+    public String equipmentUpdata(Integer id, Model model, HttpSession session) {
         Equipment equipment = equipmentMapper.selectByPrimaryKey(id);
-        model.addAttribute("equipment",equipment);
+        model.addAttribute("equipment", equipment);
         return "equipment";
     }
 
     @RequestMapping("/equipment_updatas")
-    public String equipmentUpdata(Equipment equipment,Model model, HttpSession session){
+    public String equipmentUpdata(Equipment equipment, Model model, HttpSession session) {
         System.out.println(equipment);
         equipmentMapper.updateByPrimaryKeySelective(equipment);
         model.addAttribute("msg", "修改成功");
