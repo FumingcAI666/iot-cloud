@@ -1,23 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page trimDirectiveWhitespaces="true"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>物联网云操作平台</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -43,7 +44,7 @@
 
     <link href="../../css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="../../css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="../../css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -53,7 +54,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="../../image/favicon.ico" />
+    <link rel="shortcut icon" href="../../image/favicon.ico"/>
 
 </head>
 
@@ -86,7 +87,7 @@
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
 
             <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                <img src="../../image/menu-toggler.png" alt="" />
+                <img src="../../image/menu-toggler.png" alt=""/>
             </a>
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
@@ -95,7 +96,7 @@
 
                 <li class="dropdown user">
                     <a href="/login_user" class="dropdown-toggle" data-toggle="dropdown">
-                        <img alt="" src="../../image/avatar1_small.jpg" />
+                        <img alt="" src="../../image/avatar1_small.jpg"/>
                         <span class="username">用户名：${user.name} </span>
                         <i class="icon-angle-down"></i>
                     </a>
@@ -129,7 +130,7 @@
 </div>
 
 <!-- END HEADER -->
-<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
 
 <!-- BEGIN CONTAINER -->
 
@@ -163,9 +164,9 @@
 
                         <a href="javascript:;" class="remove"></a>
 
-                        <input type="text" placeholder="Search..." />
+                        <input type="text" placeholder="Search..."/>
 
-                        <input type="button" class="submit" value=" " />
+                        <input type="button" class="submit" value=" "/>
 
                     </div>
 
@@ -174,7 +175,6 @@
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
 
             </li>
-
 
 
             <!-- from表单 -->
@@ -186,15 +186,15 @@
                 </a>
 
                 <ul class="sub-menu">
-                    <li >
+                    <li>
                         <a href="/product_infrom">
                             产品信息</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="/equipment_list">
                             设备信息</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="/entity_info">
                             数据流信息</a>
                     </li>
@@ -353,7 +353,8 @@
 
                     <h3 class="page-title">
 
-                        物联网云操作平台 <small>iot cloud</small>
+                        物联网云操作平台
+                        <small>iot cloud</small>
 
                     </h3>
 
@@ -373,7 +374,10 @@
 
                         <li class="pull-right no-text-shadow">
 
-                            <div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
+                            <div id="dashboard-report-range"
+                                 class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive"
+                                 data-tablet="" data-desktop="tooltips" data-placement="top"
+                                 data-original-title="Change dashboard date range">
 
                                 <i class="icon-calendar"></i>
 
@@ -405,7 +409,7 @@
                             </div>
                             <div class="details">
                                 <div class="number"> ${pcount} </div>
-                                <div class="desc"> 产品总数 </div>
+                                <div class="desc"> 产品总数</div>
                             </div>
                             <a class="more" href="/product_infrom">
                                 View more <i class="m-icon-swapright m-icon-white"></i>
@@ -470,36 +474,38 @@
                             <!-- /.panel-heading -->
 
                             <c:if test="${productlist != null}">
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>产品编号</th>
-                                    <th>产品名称</th>
-                                    <th>产品行业</th>
-                                    <th>产品类别</th>
-                                    <th>产品简介</th>
-                                    <th>创建时间</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${productlist}" var="row">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
                                     <tr>
-                                        <td></td>
-                                        <td>${row.id}</td>
-                                        <td><a href="/equipment_infrom?pid=${row.id}&name=${row.name}">${row.name}</a></td>
-                                        <td>${row.industry}</td>
-                                        <td>${row.category}</td>
-                                        <td>${row.introduction}</td>
-                                        <td>${row.createtime}</td>
+                                        <th></th>
+                                        <th>产品编号</th>
+                                        <th>产品名称</th>
+                                        <th>产品行业</th>
+                                        <th>产品类别</th>
+                                        <th>产品简介</th>
+                                        <th>创建时间</th>
                                     </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${productlist}" var="row">
+                                        <tr>
+                                            <td></td>
+                                            <td>${row.id}</td>
+                                            <td>
+                                                <a href="/equipment_infrom?pid=${row.id}&name=${row.name}">${row.name}</a>
+                                            </td>
+                                            <td>${row.industry}</td>
+                                            <td>${row.category}</td>
+                                            <td>${row.introduction}</td>
+                                            <td>${row.createtime}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
                             </c:if>
 
                             <div class="col-md-12 text-right">
-                                <itheima:page url="${pageContext.request.contextPath }/customer/list.action" />
+                                <itheima:page url="${pageContext.request.contextPath }/customer/list.action"/>
                             </div>
                             <!-- /.panel-body -->
                         </div>
@@ -523,7 +529,8 @@
 <div class="footer">
 
     <div class="footer-inner">
-        2013 &copy; Metronic by keenthemes.Collect from <a href="http://www.cssmoban.com/" title="网站模板" target="_blank">网站模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+        2013 &copy; Metronic by keenthemes.Collect from <a href="http://www.cssmoban.com/" title="网站模板" target="_blank">网站模板</a>
+        - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
     </div>
     <div class="footer-tools">
 			<span class="go-top">
@@ -546,7 +553,7 @@
 <script src="../../js/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="../../js/jquery.blockui.min.js" type="text/javascript"></script>
 <script src="../../js/jquery.cookie.min.js" type="text/javascript"></script>
-<script src="../../js/jquery.uniform.min.js" type="text/javascript" ></script>
+<script src="../../js/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script src="../../js/jquery.vmap.js" type="text/javascript"></script>
@@ -571,7 +578,7 @@
 <script src="../../js/index.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         App.init(); // initlayout and core plugins
         Index.init();
         Index.initJQVMAP(); // init index page's custom scripts

@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page trimDirectiveWhitespaces="true"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Metronic | Form Stuff - Form Components</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
@@ -24,23 +25,23 @@
     <link href="../../css/uniform.default.css" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-fileupload.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/chosen.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/select2_metro.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/jquery.tagsinput.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/clockface.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-wysihtml5.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/timepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/colorpicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-toggle-buttons.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/daterangepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/datetimepicker.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/multi-select-metro.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-fileupload.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.gritter.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/chosen.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/select2_metro.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.tagsinput.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/clockface.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-wysihtml5.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/timepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/colorpicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-toggle-buttons.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/daterangepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/datetimepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/multi-select-metro.css"/>
     <link href="../../css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL STYLES -->
-    <link rel="shortcut icon" href="../../image/favicon.ico" />
+    <link rel="shortcut icon" href="../../image/favicon.ico"/>
 
     <link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,14 +68,14 @@
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
             <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                <img src="../../image/menu-toggler.png" alt="" />
+                <img src="../../image/menu-toggler.png" alt=""/>
             </a>
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <ul class="nav pull-right">
                 <li class="dropdown user">
                     <a href="/login_user" class="dropdown-toggle" data-toggle="dropdown">
-                        <img alt="" src="../../image/avatar1_small.jpg" />
+                        <img alt="" src="../../image/avatar1_small.jpg"/>
                         <span class="username">用户名：${user.name} </span>
                         <i class="icon-angle-down"></i>
                     </a>
@@ -137,9 +138,9 @@
 
                         <a href="javascript:;" class="remove"></a>
 
-                        <input type="text" placeholder="Search..." />
+                        <input type="text" placeholder="Search..."/>
 
-                        <input type="button" class="submit" value=" " />
+                        <input type="button" class="submit" value=" "/>
 
                     </div>
 
@@ -148,7 +149,6 @@
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
 
             </li>
-
 
 
             <!-- from表单 -->
@@ -160,15 +160,15 @@
                 </a>
 
                 <ul class="sub-menu">
-                    <li >
+                    <li>
                         <a href="/product_infrom">
                             产品信息</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="/equipment_list">
                             设备信息</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="/entity_info">
                             数据流信息</a>
                     </li>
@@ -353,7 +353,7 @@
                     <!-- BEGIN SAMPLE FORM PORTLET-->
                     <div class="portlet box blue">
                         <div class="portlet-title">
-                            <div class="caption"><i class="icon-reorder"></i> 设 备 信 息 </div>
+                            <div class="caption"><i class="icon-reorder"></i> 设 备 信 息</div>
                             <div class="tools">
                                 <a href="javascript:;" class="collapse"></a>
                                 <a href="#portlet-config" data-toggle="modal" class="config"></a>
@@ -367,20 +367,20 @@
                                 <div class="control-group">
                                     <label class="control-label">数据流模板名</label>
                                     <div class="controls">
-                                        <input type="text" class="span6 m-wrap" name="name" />
+                                        <input type="text" class="span6 m-wrap" name="name"/>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">数据流模板单位</label>
                                     <div class="controls">
-                                        <input type="text" class="span6 m-wrap" name="unitname" />
+                                        <input type="text" class="span6 m-wrap" name="unitname"/>
                                         <!-- <span class="help-inline">密码</span> -->
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">单位符号</label>
                                     <div class="controls">
-                                        <input type="text" class="span6 m-wrap" name="unitsymbol" />
+                                        <input type="text" class="span6 m-wrap" name="unitsymbol"/>
                                     </div>
                                 </div>
 
@@ -433,9 +433,7 @@
             </div>
 
 
-
             <div id="container" style="min-width:400px;height:400px"></div>
-
 
 
         </div>
@@ -461,9 +459,10 @@
                 useUTC: false
             }
         });
+
         function activeLastPointToolip(chart) {
             var points = chart.series[0].points;
-            chart.tooltip.refresh(points[points.length -1]);
+            chart.tooltip.refresh(points[points.length - 1]);
         }
 
         var chart = Highcharts.chart('container', {
@@ -479,10 +478,10 @@
 
                             var x = (new Date()).getTime(); // 当前时间
                             $.ajax({
-                                url:"/model_date?id=${row.id}",
-                                success:function(data){
+                                url: "/model_date?id=${row.id}",
+                                success: function (data) {
                                     var y = data.parameter;       // 数据值
-                                    if(y<0 || y>30){
+                                    if (y < 0 || y > 30) {
                                         alert("${row.name}-超过阈值，请马上联系管理员");
                                     }
                                     series.addPoint([x, y], true, true);
@@ -558,7 +557,7 @@
 
     <script src="../../js/jquery.cookie.min.js" type="text/javascript"></script>
 
-    <script src="../../js/jquery.uniform.min.js" type="text/javascript" ></script>
+    <script src="../../js/jquery.uniform.min.js" type="text/javascript"></script>
 
     <!-- END CORE PLUGINS -->
 
@@ -581,15 +580,15 @@
     <script type="text/javascript" src="../../js/jquery.inputmask.bundle.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.input-ip-address-control-1.0.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.multi-select.js"></script>
-    <script src="../../js/bootstrap-modal.js" type="text/javascript" ></script>
-    <script src="../../js/bootstrap-modalmanager.js" type="text/javascript" ></script>
+    <script src="../../js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="../../js/bootstrap-modalmanager.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="../../js/app.js"></script>
     <script src="../../js/form-components.js"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
     <script>
-        jQuery(document).ready(function() {
+        jQuery(document).ready(function () {
             // initiate layout and plugins
             App.init();
             FormComponents.init();

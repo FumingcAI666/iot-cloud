@@ -1,23 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page trimDirectiveWhitespaces="true"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
 
     <title>物联网云操作平台</title>
 
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
-    <meta content="" name="description" />
+    <meta content="" name="description"/>
 
-    <meta content="" name="author" />
+    <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
 
@@ -43,7 +44,7 @@
 
     <link href="../../css/jquery.gritter.css" rel="stylesheet" type="text/css"/>
 
-    <link href="../../css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/daterangepicker.css" rel="stylesheet" type="text/css"/>
 
     <link href="../../css/fullcalendar.css" rel="stylesheet" type="text/css"/>
 
@@ -53,7 +54,7 @@
 
     <!-- END PAGE LEVEL STYLES -->
 
-    <link rel="shortcut icon" href="../../image/favicon.ico" />
+    <link rel="shortcut icon" href="../../image/favicon.ico"/>
 
 </head>
 
@@ -86,7 +87,7 @@
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
 
             <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                <img src="../../image/menu-toggler.png" alt="" />
+                <img src="../../image/menu-toggler.png" alt=""/>
             </a>
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
@@ -95,7 +96,7 @@
 
                 <li class="dropdown user">
                     <a href="/login_user" class="dropdown-toggle" data-toggle="dropdown">
-                        <img alt="" src="../../image/avatar1_small.jpg" />
+                        <img alt="" src="../../image/avatar1_small.jpg"/>
                         <span class="username">用户名：${user.name} </span>
                         <i class="icon-angle-down"></i>
                     </a>
@@ -129,7 +130,7 @@
 </div>
 
 <!-- END HEADER -->
-<div class="copyrights">Collect from </div>
+<div class="copyrights">Collect from</div>
 
 <!-- BEGIN CONTAINER -->
 
@@ -163,9 +164,9 @@
 
                         <a href="javascript:;" class="remove"></a>
 
-                        <input type="text" placeholder="Search..." />
+                        <input type="text" placeholder="Search..."/>
 
-                        <input type="button" class="submit" value=" " />
+                        <input type="button" class="submit" value=" "/>
 
                     </div>
 
@@ -174,7 +175,6 @@
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
 
             </li>
-
 
 
             <!-- from表单 -->
@@ -186,15 +186,15 @@
                 </a>
 
                 <ul class="sub-menu">
-                    <li >
+                    <li>
                         <a href="/product_infrom">
                             产品信息</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="/equipment_list">
                             设备信息</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="/entity_info">
                             数据流信息</a>
                     </li>
@@ -353,7 +353,8 @@
 
                     <h3 class="page-title">
 
-                        物联网云操作平台 <small>iot cloud</small>
+                        物联网云操作平台
+                        <small>iot cloud</small>
 
                     </h3>
 
@@ -373,7 +374,10 @@
 
                         <li class="pull-right no-text-shadow">
 
-                            <div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
+                            <div id="dashboard-report-range"
+                                 class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive"
+                                 data-tablet="" data-desktop="tooltips" data-placement="top"
+                                 data-original-title="Change dashboard date range">
 
                                 <i class="icon-calendar"></i>
 
@@ -405,109 +409,112 @@
                             </div>
                             <div class="details">
                                 <div class="number"> ${pcount} </div>
-                                <div class="desc"> 产品总数 </div>
+                                <div class="desc"> 产品总数</div>
                             </div>
                             <a class="more" href="/product_infrom">
                                 View more <i class="m-icon-swapright m-icon-white"></i>
                             </a>
                         </div>
                     </div>
-                <h3 class="page-title">
-                    行 业 资 讯 <small>提供最新最全的行业资讯</small>
-                </h3>
-                <!-- END DASHBOARD STATS -->
-                <a class="more" href="http://www.lswz.gov.cn/">
-                    国家粮食和物资储备局 <i class="m-icon-swapright m-icon-white"></i>
-                </a><br/>
-                <a class="more" href="http://36.33.35.42:8000/">
-                    国家粮食交易中心 <i class="m-icon-swapright m-icon-white"></i>
-                </a><br/>
-                <a class="more" href="http://www.chinagrain.cn/">
-                    中国粮油信息网 <i class="m-icon-swapright m-icon-white"></i>
-                </a><br/>
-                <a class="more" href="http://www.grainoil.com.cn/">
-                    中国粮食信息网 <i class="m-icon-swapright m-icon-white"></i>
-                </a><br/>
-                <a class="more" href="http://lsj.hsxgw.gov.cn/">
-                    国家粮食局 <i class="m-icon-swapright m-icon-white"></i>
-                </a><br/>
+                    <h3 class="page-title">
+                        行 业 资 讯
+                        <small>提供最新最全的行业资讯</small>
+                    </h3>
+                    <!-- END DASHBOARD STATS -->
+                    <a class="more" href="http://www.lswz.gov.cn/">
+                        国家粮食和物资储备局 <i class="m-icon-swapright m-icon-white"></i>
+                    </a><br/>
+                    <a class="more" href="http://36.33.35.42:8000/">
+                        国家粮食交易中心 <i class="m-icon-swapright m-icon-white"></i>
+                    </a><br/>
+                    <a class="more" href="http://www.chinagrain.cn/">
+                        中国粮油信息网 <i class="m-icon-swapright m-icon-white"></i>
+                    </a><br/>
+                    <a class="more" href="http://www.grainoil.com.cn/">
+                        中国粮食信息网 <i class="m-icon-swapright m-icon-white"></i>
+                    </a><br/>
+                    <a class="more" href="http://lsj.hsxgw.gov.cn/">
+                        国家粮食局 <i class="m-icon-swapright m-icon-white"></i>
+                    </a><br/>
 
 
+                </div>
             </div>
+            <!-- END PAGE CONTAINER-->
         </div>
-        <!-- END PAGE CONTAINER-->
+        <!-- END PAGE -->
     </div>
-    <!-- END PAGE -->
-</div>
 
-<!-- END CONTAINER -->
+    <!-- END CONTAINER -->
 
-<!-- BEGIN FOOTER -->
+    <!-- BEGIN FOOTER -->
 
-<div class="footer">
+    <div class="footer">
 
-    <div class="footer-inner">
-        2013 &copy; Metronic by keenthemes.Collect from <a href="http://www.cssmoban.com/" title="网站模板" target="_blank">网站模板</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
-    </div>
-    <div class="footer-tools">
+        <div class="footer-inner">
+            2013 &copy; Metronic by keenthemes.Collect from <a href="http://www.cssmoban.com/" title="网站模板"
+                                                               target="_blank">网站模板</a> - More Templates <a
+                href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+        </div>
+        <div class="footer-tools">
 			<span class="go-top">
 			<i class="icon-angle-up"></i>
 			</span>
+        </div>
     </div>
-</div>
-<!-- END FOOTER -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<script src="../../js/jquery-1.10.1.min.js" type="text/javascript"></script>
-<script src="../../js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="../../js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-<!--[if lt IE 9]>
-<script src="../../js/excanvas.min.js"></script>
-<script src="../../js/respond.min.js"></script>
-<![endif]-->
-<script src="../../js/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="../../js/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="../../js/jquery.cookie.min.js" type="text/javascript"></script>
-<script src="../../js/jquery.uniform.min.js" type="text/javascript" ></script>
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="../../js/jquery.vmap.js" type="text/javascript"></script>
-<script src="../../js/jquery.vmap.russia.js" type="text/javascript"></script>
-<script src="../../js/jquery.vmap.world.js" type="text/javascript"></script>
-<script src="../../js/jquery.vmap.europe.js" type="text/javascript"></script>
-<script src="../../js/jquery.vmap.germany.js" type="text/javascript"></script>
-<script src="../../js/jquery.vmap.usa.js" type="text/javascript"></script>
-<script src="../../js/jquery.vmap.sampledata.js" type="text/javascript"></script>
-<script src="../../js/jquery.flot.js" type="text/javascript"></script>
-<script src="../../js/jquery.flot.resize.js" type="text/javascript"></script>
-<script src="../../js/jquery.pulsate.min.js" type="text/javascript"></script>
-<script src="../../js/date.js" type="text/javascript"></script>
-<script src="../../js/daterangepicker.js" type="text/javascript"></script>
-<script src="../../js/jquery.gritter.js" type="text/javascript"></script>
-<script src="../../js/fullcalendar.min.js" type="text/javascript"></script>
-<script src="../../js/jquery.easy-pie-chart.js" type="text/javascript"></script>
-<script src="../../js/jquery.sparkline.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="../../js/app.js" type="text/javascript"></script>
-<script src="../../js/index.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<script>
-    jQuery(document).ready(function() {
-        App.init(); // initlayout and core plugins
-        Index.init();
-        Index.initJQVMAP(); // init index page's custom scripts
-        Index.initCalendar(); // init index page's custom scripts
-        Index.initCharts(); // init index page's custom scripts
-        Index.initChat();
-        Index.initMiniCharts();
-        Index.initDashboardDaterange();
-        Index.initIntro();
-    });
-</script>
-<!-- END JAVASCRIPTS -->
+    <!-- END FOOTER -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="../../js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    <script src="../../js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script src="../../js/excanvas.min.js"></script>
+    <script src="../../js/respond.min.js"></script>
+    <![endif]-->
+    <script src="../../js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.uniform.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="../../js/jquery.vmap.js" type="text/javascript"></script>
+    <script src="../../js/jquery.vmap.russia.js" type="text/javascript"></script>
+    <script src="../../js/jquery.vmap.world.js" type="text/javascript"></script>
+    <script src="../../js/jquery.vmap.europe.js" type="text/javascript"></script>
+    <script src="../../js/jquery.vmap.germany.js" type="text/javascript"></script>
+    <script src="../../js/jquery.vmap.usa.js" type="text/javascript"></script>
+    <script src="../../js/jquery.vmap.sampledata.js" type="text/javascript"></script>
+    <script src="../../js/jquery.flot.js" type="text/javascript"></script>
+    <script src="../../js/jquery.flot.resize.js" type="text/javascript"></script>
+    <script src="../../js/jquery.pulsate.min.js" type="text/javascript"></script>
+    <script src="../../js/date.js" type="text/javascript"></script>
+    <script src="../../js/daterangepicker.js" type="text/javascript"></script>
+    <script src="../../js/jquery.gritter.js" type="text/javascript"></script>
+    <script src="../../js/fullcalendar.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.easy-pie-chart.js" type="text/javascript"></script>
+    <script src="../../js/jquery.sparkline.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="../../js/app.js" type="text/javascript"></script>
+    <script src="../../js/index.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <script>
+        jQuery(document).ready(function () {
+            App.init(); // initlayout and core plugins
+            Index.init();
+            Index.initJQVMAP(); // init index page's custom scripts
+            Index.initCalendar(); // init index page's custom scripts
+            Index.initCharts(); // init index page's custom scripts
+            Index.initChat();
+            Index.initMiniCharts();
+            Index.initDashboardDaterange();
+            Index.initIntro();
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>

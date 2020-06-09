@@ -1,6 +1,6 @@
 package com.iotcloud.springboot.util;
 
-import java.io.UnsupportedEncodingException;
+import java.io.IOException;
 
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
@@ -11,10 +11,9 @@ import org.apache.commons.httpclient.methods.PostMethod;
  * @author macfmc
  * @date 2020/5/24-1:07
  */
-public class SendMQ {
+public class SendMQUtil {
 
-    public static void main(String[] args) throws Exception {
-
+    public static void sendMQ() throws IOException {
         HttpClient client = new HttpClient();
         PostMethod post = new PostMethod("http://gbk.api.smschinese.cn");
         post.addRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=gbk");//在头文件中设置转码
@@ -36,6 +35,11 @@ public class SendMQ {
         System.out.println(result); //打印返回消息状态
 
         post.releaseConnection();
+    }
+
+    // 测试
+    public static void main(String[] args) throws IOException {
+        sendMQ();
     }
 
 }
